@@ -1,4 +1,3 @@
-[![GitHub version](https://badge.fury.io/gh/angular-class%2Fangular2-webpack-starter.svg)](http://badge.fury.io/gh/angular-class%2Fangular2-webpack-starter)
 # Angular 2.0 Sample App
 
 ## Intro
