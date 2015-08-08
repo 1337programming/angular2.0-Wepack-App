@@ -49,3 +49,7 @@ __build__/**
 
 # IDE #
 .idea/
+
+# bash and zbash 
+*.un~
+*~
