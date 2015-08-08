@@ -1,3 +1,4 @@
+[![GitHub version](https://badge.fury.io/gh/1337programming%2Fangular2.0-App.svg)](http://badge.fury.io/gh/1337programming%2Fangular2.0-App)
 # Angular 2.0 Sample App
 
 ## Intro
