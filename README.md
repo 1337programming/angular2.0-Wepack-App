@@ -58,5 +58,8 @@ then
 $ npm rune e2e
 ```
 
+# Angular 2.0 API
+reference: https://angular.io/docs/js/latest/api/
+
 # License
   [MIT](/LICENSE)
