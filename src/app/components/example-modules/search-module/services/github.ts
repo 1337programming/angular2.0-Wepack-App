@@ -1,4 +1,4 @@
-/// <reference path="../../../../typings/_custom.d.ts" />
+/// <reference path="../../../../../typings/_custom.d.ts" />
 
 import {bind, Injectable, Http} from 'angular2/angular2'
 
