@@ -23,19 +23,17 @@ import {appPipes} from '../pipes/pipes';
 /*
  * Components
  */
-/* TODO: Create these Components
+
 // We use a folder if we want separate files
 import {Home} from './home/home';
 // Otherwise we only use one file for a component
 import {Dashboard} from './dashboard';
-// A simple example of a Component using a Service
-import {Todo} from './todo';
 
-// RxJs examples
-import {RxJsExamples} from './rxjs-examples/rxjs-examples';
-*/
+// Example modules
+import {ExampleModules} from './example-modules/example-modules';
 // Use webpack's `require` to get files as a raw string using raw-loader
 let styles = require('./app.css');
+let template = require('./app.html');
 
 /*
  * App Component
@@ -63,44 +61,12 @@ let styles = require('./app.css');
   ],
   // include our .css file
   styles: [ styles ],
-  template: `
-    <header>
-      <div layout="row" class="top-nav ac-default-theme">
-        <img src="angular-shield.png" alt="Angular2" height="54" width="54">
-        <span class="logo">{{ name | capitalize }} + Webpack</span>
-        <ul>
-          <li class="l-left">
-            <a [router-link]=" ['/home'] "class="top-nav-button ac-default-theme">Home</a>
-          </li>
-          <li class="l-left">
-            <a [router-link]=" ['/dashboard'] "class="top-nav-button ac-default-theme">Dashboard</a>
-          </li>
-          <li class="l-left">
-            <a [router-link]=" ['/todo'] "class="top-nav-button ac-default-theme">Todo</a>
-          </li>
-          <li class="l-left">
-            <a [router-link]=" ['/rxjs-examples', 'search'] "class="top-nav-button ac-default-theme">RxJs Examples</a>
-          </li>
-        </ul>
-      </div>
-    </header>
-
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-
-    <footer>
-      WebPack Angular 2 Starter by <a href="https://twitter.com/AngularClass">@AngularClass</a>
-    </footer>
-  `
+  template: template
 })
 @RouteConfig([
-  /* TODO: create these components
   { path: '/',                  as: 'home',          component: Home },
   { path: '/dashboard',         as: 'dashboard',     component: Dashboard },
-  { path: '/todo',              as: 'todo',          component: Todo },
-  { path: '/rxjs-examples/...', as: 'rxjs-examples', component: RxJsExamples }
-  */
+  { path: '/example-modules/...', as: 'example-modules', component: ExampleModules }
 ])
 export class App {
   name: string;
