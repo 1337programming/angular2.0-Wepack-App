@@ -36,26 +36,33 @@ Install the following node modules
 ## Running App
 After installation run `npm run server` to start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:3000` (or if you prefer IPv6, if you're using `express` server, then it's `http://[::1]:3000/`).
 
+### server
+```bash
+$ webpack-dev-server
+```
+
+## Other Commands
+
 ### build files
 ```bash
-$ npm run build # or webpack
+$ webpack
 ```
 
 ### watch and build files
 ```bash
-$ npm run watch # or webpack --watch
+$ webpack --watch
 ```
 
 ### run tests
 ```bash
-$ npm run test # or karma start
+$ karma start
 ```
 
 ### run webdriver (E2E)
 ```bash
-$ npm run webdriver-start # or webdriver-manager start
+$ webdriver-manager start
 then
-$ npm rune e2e
+$ npm run e2e
 ```
 
 # Angular 2.0 API
