@@ -33,7 +33,7 @@ describe('Capitalize', () => {
       });
 
       it('should not support new Object()', () => {
-        subject = pipe.supports(new Object());
+        subject = pipe.supports({});
         result  = false;
       });
 
@@ -62,12 +62,12 @@ describe('Capitalize', () => {
 
     describe('#capitalizeWord', () => {
       it('should capitalized a word', () => {
-        subject = pipe.capitalizeWord('something');
+        subject = CapitalizePipe.capitalizeWord('something');
         result  = 'Something';
       });
 
       it('should only capitalized first char', () => {
-        subject = pipe.capitalizeWord('something something something');
+        subject = CapitalizePipe.capitalizeWord('something something something');
         result  = 'Something something something';
       });
 
@@ -111,7 +111,7 @@ describe('Capitalize', () => {
       });
 
       it('should not support new Object()', () => {
-        subject = factory.supports(new Object());
+        subject = factory.supports({});
         result  = false;
       });
 

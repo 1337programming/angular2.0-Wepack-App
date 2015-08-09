@@ -27,7 +27,7 @@ import {appPipes} from '../pipes/pipes';
 // We use a folder if we want separate files
 import {Home} from './home/home';
 // Otherwise we only use one file for a component
-import {Dashboard} from './dashboard';
+import {Dashboard} from './dashboard/dashboard';
 
 // Example modules
 import {ExampleModules} from './example-modules/example-modules';

@@ -16,10 +16,10 @@ export class CapitalizePipe implements Pipe {
   transform(value: string, args?: List<any>): any {
     return (!value) ? '' :
       (!args) ?
-        this.capitalizeWord(value) :
-        value.replace(this.regexp, this.capitalizeWord);
+        CapitalizePipe.capitalizeWord(value) :
+        value.replace(this.regexp, CapitalizePipe.capitalizeWord);
   }
-  capitalizeWord(txt: string): string {
+  static capitalizeWord(txt: string): string {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   }
   onDestroy(): void {
