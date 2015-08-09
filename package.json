@@ -1,7 +1,7 @@
 {
-  "name": "angular2-webpack-starter",
+  "name": "angular2.0-App",
   "version": "0.0.0",
-  "description": "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E), Karma, Protractor, Jasmine, TypeScript, and Webpack by AngularClass",
+  "description": "An Angular 2.0 sample app using Webpack",
   "main": "",
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
@@ -27,16 +27,10 @@
     "prestart": "npm install",
     "start": "npm run server"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/angular-class/angular2-webpack-starter.git"
-  },
-  "author": "gdi2290 <github@gdi2290.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/angular-class/angular2-webpack-starter/issues"
+    "url": "https://github.com/1337programming/angular2.0-App/issues"
   },
-  "homepage": "https://github.com/angular-class/angular2-webpack-starter",
   "dependencies": {
     "angular2": "2.0.0-alpha.34",
     "reflect-metadata": "^0.1.0",
