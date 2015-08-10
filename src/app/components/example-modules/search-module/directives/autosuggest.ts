@@ -3,7 +3,7 @@
 // Angular 2
 import {Directive, View, EventEmitter, ElementRef, LifecycleEvent} from 'angular2/angular2';
 
-import {Github} from './Github';
+import {Github} from '../services/github';
 // RxJs
 import * as Rx from 'rx';
 

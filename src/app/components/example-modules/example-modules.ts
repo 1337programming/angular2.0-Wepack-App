@@ -5,7 +5,7 @@ import {Component, View, CSSClass} from 'angular2/angular2';
 import {RouteConfig, routerDirectives} from 'angular2/router';
 // Modules
 import {Tictactoe} from './tictactoe-module/tictactoe';
-import {Search} from '.search-module/search';
+import {Search} from './search-module/search';
 // View
 let template = require('./example-modules.html');
 let styles = require('./example-modules.css')
