@@ -3,8 +3,8 @@
 // Angular 2
 import {Component, View, EventEmitter, coreDirectives} from 'angular2/angular2';
 
-let styles   = require('./styles/board.css');
-let template = require('./views/board.html');
+let styles   = require('../styles/board.css');
+let template = require('../views/board.html');
 
 @Component({
   selector: 'board',

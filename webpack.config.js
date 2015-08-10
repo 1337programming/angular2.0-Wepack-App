@@ -7,15 +7,15 @@ var NODE_ENV = process.env.NODE_ENV || 'development';
 // Node
 var webpack = require('webpack');
 var path = require('path');
-var pkg  = require('./package.json');
+var pkg = require('./package.json');
 
 // Webpack Plugins
 var OccurenceOrderPlugin = webpack.optimize.OccurenceOrderPlugin;
-var CommonsChunkPlugin   = webpack.optimize.CommonsChunkPlugin;
+var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-var DedupePlugin   = webpack.optimize.DedupePlugin;
-var DefinePlugin   = webpack.DefinePlugin;
-var BannerPlugin   = webpack.BannerPlugin;
+var DedupePlugin = webpack.optimize.DedupePlugin;
+var DefinePlugin = webpack.DefinePlugin;
+var BannerPlugin = webpack.BannerPlugin;
 
 
 /*
@@ -54,15 +54,6 @@ var config = {
        */
 
       './src/app/bootstrap'
-    ],
-    'app-simple': [
-      // Simple Version of App
-
-      /*
-       * include any 3rd party js lib here
-       */
-
-      './src/app-simple/bootstrap'
     ]
   },
 
@@ -73,12 +64,12 @@ var config = {
     // filename: '[name].[hash].js',
     sourceMapFilename: '[name].js.map',
     chunkFilename: '[id].chunk.js'
-    // publicPath: 'http://mycdn.com/'
+      // publicPath: 'http://mycdn.com/'
   },
 
   resolve: {
     root: __dirname,
-    extensions: ['','.ts','.js','.json'],
+    extensions: ['', '.ts', '.js', '.json'],
     alias: {
       // we can switch between development and production
       // 'angular2': 'node_modules/angular2/ts',
@@ -105,16 +96,28 @@ var config = {
   module: {
     loaders: [
       // Support for *.json files.
-      { test: /\.json$/,  loader: 'json' },
+      {
+        test: /\.json$/,
+        loader: 'json'
+      },
 
       // Support for CSS as raw text
-      { test: /\.css$/,   loader: 'raw' },
+      {
+        test: /\.css$/,
+        loader: 'raw'
+      },
 
       // support for .html as raw text
-      { test: /\.html$/,  loader: 'raw' },
+      {
+        test: /\.html$/,
+        loader: 'raw'
+      },
 
       // Support for .ts files.
-      { test: /\.ts$/,    loader: 'typescript-simple?ignoreWarnings[]=2345', exclude: [
+      {
+        test: /\.ts$/,
+        loader: 'typescript-simple?ignoreWarnings[]=2345',
+        exclude: [
           /\.spec\.ts$/,
           /\.e2e\.ts$/,
           /web_modules/,
@@ -130,7 +133,10 @@ var config = {
 
   // plugins: plugins, // see below
   context: __dirname,
-  stats: { colors: true, reasons: true }
+  stats: {
+    colors: true,
+    reasons: true
+  }
 };
 
 
@@ -150,50 +156,51 @@ var commons_chunks_plugins = [
 //
 var environment_plugins = {
 
-  all: [
+    all: [
     new DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-      'VERSION': pkg.version
-    }),
+        'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+        'VERSION': pkg.version
+      }),
     new OccurenceOrderPlugin(),
     new DedupePlugin(),
   ],
 
-  production: [
+    production: [
     new UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_debugger: false
-      },
-      output: {
-        comments: false
-      },
-      beautify: false
-    }),
-    new BannerPlugin(getBanner(), {entryOnly: true})
+        compress: {
+          warnings: false,
+          drop_debugger: false
+        },
+        output: {
+          comments: false
+        },
+        beautify: false
+      }),
+    new BannerPlugin(getBanner(), {
+        entryOnly: true
+      })
   ],
 
-  development: [
+    development: [
     /* Dev Plugin */
     // new webpack.HotModuleReplacementPlugin(),
   ]
 
-}//env
+  } //env
 
 if (NODE_ENV === 'production') {
   // replace filename `.js` with `.min.js`
   config.output.filename = config.output.filename.replace('.js', '.min.js');
   config.output.sourceMapFilename = config.output.sourceMapFilename.replace('.js', '.min.js');
-  commons_chunks_plugins = commons_chunks_plugins.map(function(chunk) {
+  commons_chunks_plugins = commons_chunks_plugins.map(function (chunk) {
     return chunk.filename.replace('.js', '.min.js');
   });
-}
-else if (NODE_ENV === 'development') {
+} else if (NODE_ENV === 'development') {
   // any development actions here
 }
 
 // create CommonsChunkPlugin instance for each config
-var combine_common_chunks = commons_chunks_plugins.map(function(config) {
+var combine_common_chunks = commons_chunks_plugins.map(function (config) {
   return new CommonsChunkPlugin(config);
 });
 
@@ -205,15 +212,15 @@ module.exports = config;
 
 // Helper functions
 function getBanner() {
-  return 'Angular2 Webpack Starter v'+ pkg.version +' by @gdi2990 from @AngularClass';
+  return 'Angular2.0 App v' + pkg.version;
 }
 
 function root(args) {
   args = sliceArgs(arguments, 0);
   return path.join.apply(path, [__dirname].concat(args));
 }
+
 function rootNode(args) {
   args = sliceArgs(arguments, 0);
   return root.apply(path, ['node_modules'].concat(args));
 }
-
