@@ -15,6 +15,13 @@
   <script>baseElement = document.querySelector('base');baseElement.attr = baseElement.getAttribute;</script>
   <!-- styles -->
   <style>
+    .loader {
+      width: 75px;
+      position: fixed;
+      right: 50%;
+      top: 50%;
+    }
+
     body {
       margin: 0;
     }
@@ -28,8 +35,8 @@
 </head>
 <body>
 
-  <app>
-    Loading...
+  <app (loading)="loading = $event" autofocus>
+    <img class="loader" [hidden]="!loading" src="https://www.brown.edu/sites/default/themes/pawtuxet/img/loader-larger.gif">
   </app>
 
   <!-- Commmon files to be cached -->
