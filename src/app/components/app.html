@@ -1,7 +1,9 @@
 <header>
   <div layout="row" class="top-nav ac-default-theme">
-    <img src="angular-shield.png" alt="Angular2" height="54" width="54">
-    <span class="logo">{{ name | capitalize }} + Patrcik + Webpack</span>
+    <a href="https://github.com/1337programming/angular2.0-App">
+      <img src="angularjs-logo_patrick.png" alt="AngularP" height="54" width="54">
+    </a>
+      <span class="logo">{{ name | capitalize }} + Patrick + Webpack</span>
     <ul>
       <li class="l-left">
         <a [router-link]=" ['/home'] "class="top-nav-button ac-default-theme">Home</a>
@@ -10,7 +12,13 @@
         <a [router-link]=" ['/dashboard'] "class="top-nav-button ac-default-theme">Dashboard</a>
       </li>
       <li class="l-left">
-        <a [router-link]=" ['/example-modules', 'search'] "class="top-nav-button ac-default-theme">Example Modules</a>
+        <a [router-link]=" ['/example-modules', 'search'] "class="top-nav-button ac-default-theme">Modules</a>
+      </li>
+      <li class="l-left">
+        <img src="angular-shield.png" alt="Angular2" height="54" width="54">
+      </li>
+      <li class="l-left">
+        <img src="webpack.png" alt="Webpack" height="54" width="54">
       </li>
     </ul>
   </div>
