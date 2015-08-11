@@ -121,7 +121,6 @@ var config = {
           /\.spec\.ts$/,
           /\.e2e\.ts$/,
           /web_modules/,
-          /test/,
           /node_modules/
         ]
       }
