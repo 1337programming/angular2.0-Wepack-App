@@ -4,28 +4,29 @@
 import {Component, View, coreDirectives} from 'angular2/angular2';
 
 // Services
-import {Game}  from './services/game';
+import {MemoryGame}  from './services/game';
 
 // Directives
-import {Card} from './directives/card';
+import {Board} from './directives/board';
 
 // View
 let view = require('./views/memory.html');
 
 @Component({
   selector: 'memory',
-  viewBindings: [Game]
+  viewBindings: [MemoryGame]
 })
 @View({
-  directives: [coreDirectives, Card],
+  directives: [coreDirectives, Board],
   template: view
 })
+
 export class Memory {
-  constructor(public game: Game) {
-
-  }
-
-  reset() {
-    this.game = Game.create();
+  game: MemoryGame;
+  tileNames: Array<string>;
+  constructor() {
+    this.tileNames = ['8-ball', 'kronos', 'baked-potato', 'dinosaur', 'rocket', 'skinny-unicorn',
+      'that-guy', 'zeppelin'];
+    this.game = new MemoryGame(this.tileNames);
   }
 }

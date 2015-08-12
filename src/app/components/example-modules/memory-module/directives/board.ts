@@ -4,11 +4,11 @@
 import {Component, View, EventEmitter, coreDirectives} from 'angular2/angular2';
 
 let styles   = require('../views/css/memory.css');
-let template = require('../views/card.html');
+let template = require('../views/board.html');
 
 @Component({
-  selector: 'card',
-  properties: [ 'card' ],
+  selector: 'board',
+  properties: [ 'board' ],
   events: [ 'select' ]
 })
 @View({
@@ -16,6 +16,6 @@ let template = require('../views/card.html');
   styles: [styles],
   template: template
 })
-export class Card {
+export class Board {
   select: EventEmitter = new EventEmitter();
 }
