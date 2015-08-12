@@ -25,17 +25,18 @@ var BannerPlugin = webpack.BannerPlugin;
 var config = {
   devtool: 'source-map',
   // devtool: 'eval',
-
+  watch: true,
   debug: true,
   cache: true,
   // our Development Server configs
-  devServer: {
+  /*devServer: {
     inline: true,
     colors: true,
     historyApiFallback: true,
     contentBase: 'src/public',
-    publicPath: '/__build__'
-  },
+    publicPath: '/__build__',
+    hot: true
+  },*/
 
   //
   entry: {
@@ -44,15 +45,12 @@ var config = {
       'zone.js',
       'reflect-metadata',
       'rtts_assert/rtts_assert',
-      'angular2/angular2'
+      'angular2/angular2'      
     ],
     'app': [
       // App
-
-      /*
-       * include any 3rd party js lib here
-       */
-
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/dev-server',
       './src/app/bootstrap'
     ]
   },
@@ -60,11 +58,11 @@ var config = {
   // Config for our build files
   output: {
     path: root('__build__'),
-    filename: '[name].js',
+    filename: 'app.js',
     // filename: '[name].[hash].js',
-    sourceMapFilename: '[name].js.map',
-    chunkFilename: '[id].chunk.js'
-      // publicPath: 'http://mycdn.com/'
+    sourceMapFilename: 'app.js.map',
+    chunkFilename: '[id].chunk.js',
+    publicPath: '/__build__/'
   },
 
   resolve: {
@@ -129,8 +127,6 @@ var config = {
       /rtts_assert\/src\/rtts_assert/
     ]
   },
-
-  // plugins: plugins, // see below
   context: __dirname,
   stats: {
     colors: true,
@@ -180,9 +176,9 @@ var environment_plugins = {
       })
   ],
 
-    development: [
+  development: [
     /* Dev Plugin */
-    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ]
 
   } //env
@@ -203,6 +199,7 @@ var combine_common_chunks = commons_chunks_plugins.map(function (config) {
   return new CommonsChunkPlugin(config);
 });
 
+console.log('NODE_ENV', NODE_ENV);
 // conbine everything
 config.plugins = [].concat(combine_common_chunks, environment_plugins.all, environment_plugins[NODE_ENV]);
 
