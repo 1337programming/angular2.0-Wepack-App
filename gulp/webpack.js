@@ -20,8 +20,7 @@ gulp.task('webpack-dev-server', function(callback) {
 
   server.listen(8080, "localhost", function() {});
 
-  gutil.log('[webpack-dev-server]',
-    'http://localhost:8080/');
+  gutil.log('[webpack-dev-server]', 'http://localhost:8080/');
 
   callback();
 });
