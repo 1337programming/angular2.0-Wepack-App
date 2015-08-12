@@ -10,12 +10,6 @@ gulp.task('webpack-dev-server', function(callback) {
   var server = new WebpackDevServer(webpack(config), {
     publicPath: '/__build__/',
     contentBase: 'src/public',
-
-    // Toggle this to enable _in code_ hot module replacement.
-    // See hot-module.js / css for an example.  If you're looking
-    // to simply update css / js, set to false for a sufficent enough
-    // page refresh.  Otherwise you will need to wrap js requires
-    // in the hot module loader accept callback in `app.js`.
     hot: true,
     inline: true,
     noInfo: true,
@@ -43,4 +37,3 @@ gulp.task('webpack', ['clean', 'webpack-dev-server'], function (callback) {
     }));
   });
 });
-
