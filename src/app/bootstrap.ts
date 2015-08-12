@@ -76,3 +76,18 @@ bootstrap(
     platformInjectables
   ]
 );
+
+if(module.hot) {
+  module.hot.accept(function() {
+    bootstrap(
+      // Top Level Component
+      App,
+
+      // AppInjector
+      [
+        universalInjectables,
+        platformInjectables
+      ]
+    );
+  });
+}
