@@ -25,7 +25,6 @@ export class Github implements ISearchable<any[]> {
 
 }
 
-
 export var githubInjectables = [
   bind(Github).toClass(Github)
 ];

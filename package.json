@@ -36,6 +36,7 @@
     "reflect-metadata": "^0.1.0",
     "rtts_assert": "2.0.0-alpha.34",
     "rx": "^2.5.3",
+    "firebase": "^2.2.4",
     "zone.js": "^0.5.2"
   },
   "devDependencies": {
@@ -68,6 +69,7 @@
     "url-loader": "^0.5.5",
     "webpack": "^1.10.5",
     "webpack-dev-server": "^1.10.1",
-    "webpack-stream": "^2.1.0"
+    "webpack-stream": "^2.1.0",
+    "moment": "^2.10.6"
   }
 }
