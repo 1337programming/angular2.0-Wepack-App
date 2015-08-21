@@ -7,6 +7,7 @@ import {RouteConfig, routerDirectives} from 'angular2/router';
 import {Tictactoe} from './tictactoe-module/tictactoe';
 import {Search} from './search-module/search';
 import {Memory} from './memory-module/memory';
+import {HackerNews} from './hn-module/hn';
 // View
 let template = require('./example-modules.html');
 let styles = require('./example-modules.css')
@@ -17,7 +18,8 @@ let styles = require('./example-modules.css')
   { path: '/',              redirectTo: '/search' },
   { path: '/search',        as: 'search',        component: Search },
   { path: '/tictactoe',     as: 'tictactoe',     component: Tictactoe },
-  { path: '/memory',        as: 'memory',        component: Memory }
+  { path: '/memory',        as: 'memory',        component: Memory },
+  { pathL '/hn',            as: 'hn',            component: HackerNews }
 ])
 @View({
   directives: [ routerDirectives, CSSClass ],
