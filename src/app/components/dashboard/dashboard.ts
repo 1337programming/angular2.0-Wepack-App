@@ -3,14 +3,18 @@
 /*
  * Angular 2
  */
-import {Component, View, Directive, ElementRef} from 'angular2/angular2';
+import {Component, View, Directive, coreDirectives, ElementRef} from 'angular2/angular2';
 
+// Directives
+import {Structure} from './directives/structure';
+
+// View
 let view = require('./views/dashboard.html');
 
-/*
- * TODO: refactor
- * simple example directive that should be in `/directives` folder
- */
+// Styles
+let styles = require('./styles/dashboard.css');
+
+
 @Directive({
   selector: '[x-large]' // using [ ] means selecting attributes
 })
@@ -28,8 +32,9 @@ class XLarge {
   selector: 'dashboard'
 })
 @View({
-  directives: [ XLarge ],
-  template: view
+  directives: [ coreDirectives, XLarge, Structure ],
+  template: view,
+  styles: [styles]
 })
 export class Dashboard {
   constructor() {
