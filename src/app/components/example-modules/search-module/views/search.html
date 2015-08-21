@@ -1,20 +1,21 @@
 <div style="padding: 0 16px;">
     <h2>Search Github repos</h2>
 
-    <section>
-
-        <input autosuggest (term)="showResults($event)" (loading)="loading = $event" type="text" autofocus>
-        <img style="width: 20px;position: absolute;" [hidden]="!loading" src="https://www.brown.edu/sites/default/themes/pawtuxet/img/loader-larger.gif">
-
-    </section>
-
-    <section>
-
-        <div *ng-for="#repo of repos" style="padding: 0.5em 0.5em 0.5em 0;">
-            <a [href]="repo.html_url" target="_blank">
-        {{ repo.owner.login }}/<b>{{ repo.name }}</b>
-      </a>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input autosuggest class="form-control" placeholder="Search" (term)="showResults($event)" (loading)="loading = $event" type="text" autofocus><img style="width: 20px;position: absolute;" [hidden]="!loading" src="https://www.brown.edu/sites/default/themes/pawtuxet/img/loader-larger.gif">
         </div>
+      </form>
+    </div>
+    <div class="panel-footer">
+      <div *ng-for="#repo of repos" style="padding: 0.5em 0.5em 0.5em 0;">
+        <a [href]="repo.html_url" target="_blank">
+          {{ repo.owner.login }}/<b>{{ repo.name }}</b>
+        </a>
+      </div>
+    </div>
+  </div>
 
-    </section>
 </div>
