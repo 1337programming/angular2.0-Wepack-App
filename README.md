@@ -4,18 +4,21 @@
 # Angular 2.0 Sample App
 
 Angular 2.0 Sample App using Typescript as a ECMAScript 6 standard and invoking webpack as a module bundler.
+Gulp is included in the stack to wrap Webpack and any other required task automation processes.
 
 ## Tags
 * Angular 2.0
 * TypeScript
 * ECMAScript 6 Standard
 * Webpack
+* Gulp
 
 # Getting Started
 ## Dependencies
 What is needed to run this app:
 * `node`
 * `npm`
+* `gulp`
 
 Install the following node modules
 * `webpack` (`npm install -g webpack`)
@@ -51,6 +54,10 @@ $ webpack
 ### watch and build files
 ```bash
 $ webpack --watch
+```
+### Webpack Dev Server and Watch and build files
+```bash
+$ gulp serve
 ```
 
 ### run tests
