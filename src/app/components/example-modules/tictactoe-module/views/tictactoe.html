@@ -1,7 +1,13 @@
 <div style="padding: 0 16px;">
-  <h1>Tic Tac Toe</h1>
-  <h2 *ng-if="game.winner">{{ game.winner }} won!</h2>
-  <h2 *ng-if="game.draw">draw</h2>
-  <button (click)="reset()">reset</button>
-  <board [board]="game.board" (select)="game.play($event)"></board>
+  <h2>Tic Tac Toe</h2>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div style="padding: 0 16px;">
+        <h2 *ng-if="game.winner">{{ game.winner }} won!</h2>
+        <h2 *ng-if="game.draw">draw</h2>
+        <button (click)="reset()">reset</button>
+        <board [board]="game.board" (select)="game.play($event)"></board>
+      </div>
+    </div>
+  </div>
 </div>
