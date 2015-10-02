@@ -32,9 +32,7 @@ Install the following node modules
 * `fork` repo
 * `clone`
 * `npm install`
-* `npm install express connect-history-api-fallback morgan body-parser` installs sample backend api
-* `npm run express` starts up sample backend api server in one tab
-* `npm run server` starts the dev server in another tab
+* `gulp` starts the dev server in
 
 ## Running App
 After installation run `npm run server` to start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:3000` (or if you prefer IPv6, if you're using `express` server, then it's `http://[::1]:3000/`).
